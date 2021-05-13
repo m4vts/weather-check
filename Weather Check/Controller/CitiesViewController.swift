@@ -52,7 +52,8 @@ class CitiesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
-    //Tableview functions
+   //MARK: - UITableViewDelegate
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return nearbyCities.count
     }
