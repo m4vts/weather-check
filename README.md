@@ -1,4 +1,4 @@
-# weather-check
+This is an iOS weather forecast app that uses metaweather API to show 7 day weather forecast of nearby cities.
 
 ![breezy1](https://user-images.githubusercontent.com/51910678/118130902-8c34b500-b406-11eb-956c-2d8d68d3f9a5.png)
 ![breezy2](https://user-images.githubusercontent.com/51910678/118130903-8ccd4b80-b406-11eb-8f03-17161fe9df13.png)
