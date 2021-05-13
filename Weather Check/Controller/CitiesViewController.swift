@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Network
 
 class CitiesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, WeatherManagerDelegate {
 
@@ -20,6 +21,8 @@ class CitiesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        verifyConnection()
+        
         //register the nib file to the tableview
         let nib = UINib(nibName: "CitiesTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "CitiesTableViewCell")
@@ -30,6 +33,23 @@ class CitiesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         weatherManager.delegate = self
         
         
+    }
+    
+    func verifyConnection() {
+        let monitor = NWPathMonitor()
+        let queue = DispatchQueue(label: "Monitor")
+        monitor.start(queue: queue)
+        
+        monitor.pathUpdateHandler = { path in
+
+            if path.status != .satisfied {
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Oops!", message: "There is a problem with your internet connection", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
     }
     
     //Tableview functions

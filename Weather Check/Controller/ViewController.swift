@@ -7,13 +7,11 @@
 
 import UIKit
 import CoreLocation
+import Network
 
-class ViewController: UIViewController, UITextFieldDelegate, WeatherManagerDelegate {
+class ViewController: UIViewController, WeatherManagerDelegate {
 
 
-    @IBOutlet weak var searchTextField: UITextField!
-    
-    @IBOutlet weak var searchButton: UIButton!
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -23,10 +21,12 @@ class ViewController: UIViewController, UITextFieldDelegate, WeatherManagerDeleg
     let locationManager = CLLocationManager()
     
     var nearbyCities = Array<CityModel>()
-    var forecasts = Array<WeatherModel>()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        verifyConnection()
         
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
@@ -41,49 +41,32 @@ class ViewController: UIViewController, UITextFieldDelegate, WeatherManagerDeleg
         tableView.delegate = self
         tableView.dataSource = self
         
-        searchTextField.delegate = self
+        self.tableView.layer.cornerRadius = 10
         
-        nearbyCitiesButton.layer.cornerRadius = 20
-        nearbyCitiesButton.layer.borderWidth = 0.5
-        nearbyCitiesButton.layer.borderColor = UIColor.blue.cgColor
+        nearbyCitiesButton.layer.cornerRadius = 16
     
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        searchTextField.endEditing(true)
-        return true
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+    func verifyConnection() {
+        let monitor = NWPathMonitor()
+        let queue = DispatchQueue(label: "Monitor")
+        monitor.start(queue: queue)
         
-        //use searchTextField.text to get the weather of that city
-        if let city = searchTextField.text {
-            weatherManager.fetchWeather(cityName: city)
-        }
-        
-        searchTextField.text = ""
-    }
-    
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        if (searchTextField.text != "") {
-            return true
-        } else {
-            searchTextField.placeholder = "Provide a city name"
-            return false
+        monitor.pathUpdateHandler = { path in
+
+            if path.status != .satisfied {
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Oops!", message: "There is a problem with your internet connection", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
         }
     }
-    
+
     @IBAction func nearbyPressed(_ sender: Any) {
         self.performSegue(withIdentifier: "goToCities", sender: self)
     }
-    
-    @IBAction func locationPressed(_ sender: Any) {
-    }
-    
-    @IBAction func searchPressed(_ sender: Any) {
-        searchTextField.endEditing(true)
-    }
-    
     
     
 //MARK: - WeatherManagerDelegate

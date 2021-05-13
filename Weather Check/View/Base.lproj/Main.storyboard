@@ -7,6 +7,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="ComingSoon-Regular.ttf">
+            <string>ComingSoon-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -25,62 +30,24 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="6ha-To-FeE" userLabel="Background">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZe-cj-TD7">
-                                <rect key="frame" x="20" y="181" width="62" height="19"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title=" Locate" image="viewfinder.circle" catalog="system">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="locationPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="59K-Zu-X1f"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X7P-Nb-nOk">
-                                <rect key="frame" x="20" y="66" width="374" height="113"/>
-                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="go"/>
-                            </textField>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JlF-qm-CDN">
-                                <rect key="frame" x="52" y="780" width="310" height="62"/>
+                                <rect key="frame" x="17.5" y="795" width="379" height="47"/>
                                 <color key="backgroundColor" red="0.97656208280000001" green="0.95636004210000003" blue="0.99609214069999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="ComingSoon-Regular" family="Coming Soon" pointSize="23"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title=" 7 Day Weather Forecast ">
+                                <state key="normal" title="  Tap to see 7 day weather forecast ">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="nearbyPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3DE-tM-ztu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4H-MQ-k1j" userLabel="SearchButton">
-                                <rect key="frame" x="123" y="181" width="60" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="lse-F9-Fdm"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Search" image="magnifyingglass" catalog="system">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="searchPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a0c-cr-Trb"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nearby Cities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1i-4O-5bc">
-                                <rect key="frame" x="20" y="282" width="294" height="45"/>
-                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="27"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xgB-lm-fBr">
-                                <rect key="frame" x="20" y="335" width="374" height="425"/>
+                                <rect key="frame" x="20" y="310" width="374" height="442"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="374" id="CXk-bi-Rat"/>
-                                    <constraint firstAttribute="height" constant="425" id="kAV-y2-VXo"/>
+                                    <constraint firstAttribute="height" constant="442" id="kAV-y2-VXo"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="LBm-OE-js5">
@@ -93,38 +60,40 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AppName" translatesAutoresizingMaskIntoConstraints="NO" id="HDU-vY-ghA">
+                                <rect key="frame" x="20" y="44" width="185" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AppIcon" translatesAutoresizingMaskIntoConstraints="NO" id="bKd-o0-kRK">
+                                <rect key="frame" x="213" y="51" width="123" height="97"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEARBY CITIES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1i-4O-5bc">
+                                <rect key="frame" x="20" y="270" width="294" height="41"/>
+                                <fontDescription key="fontDescription" name="ComingSoon-Regular" family="Coming Soon" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JlF-qm-CDN" secondAttribute="bottom" constant="20" id="1ER-WA-fv6"/>
                             <constraint firstItem="6ha-To-FeE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="6bX-KF-CHq"/>
-                            <constraint firstItem="sZe-cj-TD7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7b8-aG-66B"/>
-                            <constraint firstItem="JlF-qm-CDN" firstAttribute="top" secondItem="xgB-lm-fBr" secondAttribute="bottom" constant="20" id="CFI-eK-3t8"/>
-                            <constraint firstItem="G4H-MQ-k1j" firstAttribute="top" secondItem="X7P-Nb-nOk" secondAttribute="bottom" constant="2" id="Fz0-io-7v7"/>
+                            <constraint firstItem="JlF-qm-CDN" firstAttribute="top" secondItem="xgB-lm-fBr" secondAttribute="bottom" constant="43" id="CFI-eK-3t8"/>
                             <constraint firstItem="JlF-qm-CDN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Iyo-uv-UHb"/>
-                            <constraint firstItem="sZe-cj-TD7" firstAttribute="top" secondItem="X7P-Nb-nOk" secondAttribute="bottom" constant="2" id="Lcx-uC-Cmm"/>
                             <constraint firstAttribute="trailing" secondItem="6ha-To-FeE" secondAttribute="trailing" id="Rzp-Yy-GKH"/>
-                            <constraint firstItem="A1i-4O-5bc" firstAttribute="top" secondItem="sZe-cj-TD7" secondAttribute="bottom" constant="82" id="VBB-lU-AZE"/>
-                            <constraint firstItem="X7P-Nb-nOk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WtK-zO-eEU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="A1i-4O-5bc" secondAttribute="trailing" constant="100" id="Xu8-F2-6XF"/>
-                            <constraint firstItem="X7P-Nb-nOk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Zsd-ce-dFC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X7P-Nb-nOk" secondAttribute="trailing" constant="20" id="cdz-bc-oC9"/>
-                            <constraint firstItem="A1i-4O-5bc" firstAttribute="top" secondItem="G4H-MQ-k1j" secondAttribute="bottom" constant="81" id="ch6-i1-g90"/>
-                            <constraint firstItem="G4H-MQ-k1j" firstAttribute="leading" secondItem="sZe-cj-TD7" secondAttribute="trailing" constant="41" id="fVH-Ia-L8u"/>
                             <constraint firstItem="xgB-lm-fBr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hTy-zt-ZMj"/>
                             <constraint firstAttribute="bottom" secondItem="6ha-To-FeE" secondAttribute="bottom" id="mtY-gK-fHN"/>
                             <constraint firstItem="6ha-To-FeE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tFN-qL-HDh"/>
-                            <constraint firstItem="X7P-Nb-nOk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="v4C-dB-cwU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xgB-lm-fBr" secondAttribute="trailing" constant="20" id="vaT-Oc-n0g"/>
-                            <constraint firstItem="xgB-lm-fBr" firstAttribute="top" secondItem="A1i-4O-5bc" secondAttribute="bottom" constant="8" symbolic="YES" id="wwH-vI-4Gq"/>
+                            <constraint firstItem="xgB-lm-fBr" firstAttribute="top" secondItem="A1i-4O-5bc" secondAttribute="bottom" constant="-1" id="wwH-vI-4Gq"/>
                             <constraint firstItem="A1i-4O-5bc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="xDX-Nf-pXI"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="nearbyCitiesButton" destination="JlF-qm-CDN" id="Zkf-zR-ouY"/>
-                        <outlet property="searchButton" destination="G4H-MQ-k1j" id="KS0-Qq-NzG"/>
-                        <outlet property="searchTextField" destination="X7P-Nb-nOk" id="6UB-W4-v0b"/>
                         <outlet property="tableView" destination="xgB-lm-fBr" id="aMx-IU-4G0"/>
                         <segue destination="pj5-yJ-g2N" kind="presentation" identifier="goToCities" id="fdf-t4-ppw"/>
                     </connections>
@@ -185,7 +154,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="USy-Vk-kcw">
-                                <rect key="frame" x="10" y="59" width="414" height="783"/>
+                                <rect key="frame" x="10" y="54.5" width="414" height="787.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="8pe-dT-yOf">
@@ -198,9 +167,9 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Istanbul" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="983-fQ-Tw5">
-                                <rect key="frame" x="20" y="7" width="88" height="44"/>
-                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISTANBUL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="983-fQ-Tw5">
+                                <rect key="frame" x="20" y="7" width="115.5" height="39.5"/>
+                                <fontDescription key="fontDescription" name="ComingSoon-Regular" family="Coming Soon" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -227,9 +196,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AppIcon" width="170.5" height="170.5"/>
+        <image name="AppName" width="150" height="77"/>
         <image name="background" width="138" height="298.5"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="viewfinder.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

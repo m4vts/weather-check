@@ -19,12 +19,21 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="i3n-YL-KRD" userLabel="WCBackgorund">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppIcon" translatesAutoresizingMaskIntoConstraints="NO" id="eZq-UT-plz">
+                                <rect key="frame" x="157" y="398" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Jzm-SK-tGG"/>
+                                    <constraint firstAttribute="width" constant="100" id="MD4-uc-Sdx"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="i3n-YL-KRD" secondAttribute="bottom" id="9OA-8o-lt8"/>
+                            <constraint firstItem="eZq-UT-plz" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="AF1-q8-Let"/>
                             <constraint firstItem="i3n-YL-KRD" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="PSZ-4B-Gvn"/>
+                            <constraint firstItem="eZq-UT-plz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Xf9-Ug-439"/>
                             <constraint firstItem="i3n-YL-KRD" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="uOY-kM-hgm"/>
                             <constraint firstItem="i3n-YL-KRD" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailing" id="vfu-64-I7e"/>
                         </constraints>
@@ -36,6 +45,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AppIcon" width="170.5" height="170.5"/>
         <image name="background" width="138" height="298.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

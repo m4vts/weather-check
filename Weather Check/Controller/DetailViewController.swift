@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Network
 
 class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -20,6 +21,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        verifyConnection()
+        
         detailTableView.delegate = self
         detailTableView.dataSource = self
         
@@ -29,6 +32,23 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if let name = cityName {
             cityNameLabel.text = name
+        }
+    }
+    
+    func verifyConnection() {
+        let monitor = NWPathMonitor()
+        let queue = DispatchQueue(label: "Monitor")
+        monitor.start(queue: queue)
+        
+        monitor.pathUpdateHandler = { path in
+
+            if path.status != .satisfied {
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Oops!", message: "There is a problem with your internet connection", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
         }
     }
     
